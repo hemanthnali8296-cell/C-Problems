@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+ int atendense;
+ scanf("%d",&atendense);
+ if(atendense>=75&&atendense<=100){
+    printf("Eligible for Exam");
+ }else{
+    printf("Not Eligible for Exam");
+ }
+    return 0;
+}
