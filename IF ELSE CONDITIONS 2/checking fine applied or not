@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+ int re_day;
+ scanf("%d",&re_day);
+ if(re_day>7){
+    printf("Fine Applied");
+ }else{
+    printf("No Fine");
+ }
+    return 0;
+}
