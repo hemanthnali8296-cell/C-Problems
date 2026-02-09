@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+   float Data;
+   scanf("%fGB",&Data);
+   if(Data>=0&&Data<2){
+       printf("Data Within Limit");
+   }else{
+       printf("Data usage exceeded");
+   }
+    return 0;
+}
