@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+ int balence;
+ scanf("%d",&balence);
+ if(balence>=1000){
+    printf("Sufficient Balence");
+ }else{
+    printf("Low Balence");
+ }
+    return 0;
+}
