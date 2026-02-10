@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main() {
+    int Type, age;
+    float fare, finalFare;
+    scanf("%d %d", &Type,&age);
+    switch (Type) {
+        case 1:
+            fare = 300;
+            break;
+        case 2:
+            fare = 1000;
+            break;
+        default:
+            printf("Invalid Type");
+            return 0;
+    }
+    if (age < 12) {
+        finalFare = fare * 0.50;       
+    }
+    else if (age >= 60 &&Type == 1) {
+        finalFare = fare * 0.67;          
+    }
+    else {
+        finalFare = fare;               
+    }
+    printf("Final Ticket Fare:%.2f", finalFare);
+
+    return 0;
+}
