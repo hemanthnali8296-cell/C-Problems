@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main() {
+    int type,trip,charge=0;
+    scanf("%d %d",&type,&trip);
+    switch (type){
+        case 1:
+        if(trip==1){
+            charge=100;
+            printf("%d",charge);
+        }else if(trip>=2&&trip<=10){
+            charge=800;
+            printf("%d",charge);
+        }else(trip>10);{
+            charge=800;
+            printf("%d",charge);
+        }
+        break;
+        case 2:
+        if(trip==1){
+            charge=240;
+            printf("%d",charge);
+        }else if(trip>=2&&trip<=10){
+            charge=trip*240;
+            printf("%d",charge);
+        }break;
+        default:
+        printf("Invalid Type");
+    }
+     return 0;
+}
