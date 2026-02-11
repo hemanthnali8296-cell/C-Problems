@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main(){
+    int type,year;
+    scanf("%d %d",&type,&year);
+    switch(type){
+        case 1:
+        if(year<=3&&year>=1){
+            printf(" Intrest 3%%");
+        }
+        case 2:
+        if(year>3){
+            printf("Intrest 7%%");
+        }
+    }return 0;
+}
