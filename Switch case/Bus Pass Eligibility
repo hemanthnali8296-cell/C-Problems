@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int type,distance;
+    scanf("%d %d",&type,&distance);
+    switch(type){
+        case 1:
+        if(distance<=30&&distance>=1){
+            printf("Eligible");
+        }else{
+            printf("Eligible With Extra Fee");
+        }break;
+        case 2:
+        if(distance<=30&&distance>=1){
+            printf("Eligible");
+        }else{
+            printf("Not Eligible");
+        }
+    }
+    return 0;
+}
