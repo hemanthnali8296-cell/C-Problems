@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int type;
+    int experience,salary=0;
+    scanf("%d %d",&type,&experience);
+    switch(type){
+        case 1:
+            salary=50000;
+            break;
+            case 2:
+            salary=35000;
+            break;
+            default:
+            printf("Invalid Type");
+      return 0;}
+     if(experience>=3){
+        salary+=experience*5000;
+     }printf("Salary %d",salary);
+     return 0;
+}
