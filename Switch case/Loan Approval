@@ -6,15 +6,13 @@ int main() {
         case 1:
         if(score>=700){
             printf("Approved");
-        }else if(score>=650&&score<=699){
-            printf("Manual Review");
         }else{
             printf("Rejected");
         }break;
         case 2:
         if(score>=700){
             printf("Approved");
-        }else{
+        } else{
             printf("Rejected");
         }break;
     }
