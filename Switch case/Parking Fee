@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+    int type,time,fee=0;
+    scanf("%d %d",&type,&time);
+    switch(type){
+        case 1:
+        fee=time*10;
+        printf("Parking Fee %d",fee);
+    break;
+    case 2:
+    fee= time*20;
+    printf("Parking Fee %d",fee);
+    break;
+    default:
+    printf("Invalid Type");
+    }
+    return 0;
+}
