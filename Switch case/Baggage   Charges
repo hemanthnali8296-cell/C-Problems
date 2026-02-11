@@ -12,7 +12,7 @@ int main() {
         charge=0;
         printf("No Charge");
     }else if(weight>3){
-        charge=weight*300;
+        charge=(weight-3)*300;
         printf(" Extra baggage Charge ₹ %d",charge);
     }
         default:
