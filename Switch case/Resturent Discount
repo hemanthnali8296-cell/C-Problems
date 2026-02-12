@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    int type,bill,totalprice=0;
+      scanf("%d %d",&type,&bill);
+      switch(type){
+        case 1:
+          totalprice=bill-(bill*0.05);
+          printf("%d",totalprice);
+          break;
+          case 2:
+          totalprice=bill-(bill*0.15);
+          printf("%d",totalprice);
+          break;
+      }
+}
