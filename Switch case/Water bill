@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+    int type,unit,amount=0;
+    scanf("%d %d",&type,&unit);
+    switch(type){
+        case 1:
+        if(unit>30){
+            amount=unit*8;
+            printf("%d",amount);
+        }else if(unit<=30&&unit>0){
+            amount=unit*5;
+            printf("%d",amount);
+        }break;
+        case 2:
+        amount=unit*10;
+        printf("%d",amount);
+        break;
+    }
+}
