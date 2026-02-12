@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int type,time,charge=0;
+    scanf("%d %d",&type,&time);
+    switch(type){
+        case 1:
+        charge=1*time;
+        printf("%d",charge);
+        break;
+        case 2:
+        charge=3*time;
+        printf("%d",charge);
+        break;
+        case 3:
+        charge=10*time;
+        printf("%d",charge);
+        break;
+    }
+
+}
