@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+    int type,Km,fare=0;
+    scanf("%d %d",&type,&Km);
+    switch(type){
+        case 1:
+        fare=10*Km;
+        printf("%d",fare);
+        break;
+        case 2:
+        fare=15*Km;
+        printf("%d",fare);
+        break;
+        case 3:
+        fare=20*Km;
+        printf("%d",fare);
+        break;
+  }
+}
