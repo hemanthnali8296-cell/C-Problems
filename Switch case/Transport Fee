@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+    int  type,distance;
+   scanf("%d %d",&type,&distance);
+   switch(type){
+    case 1:
+    if(distance<=5){
+        printf("Transport Fee ₹ 800");
+    }
+    break;
+    case 2:
+    if(distance>=6&&distance<=10){
+        printf("Transport Fee ₹ 1200");
+    }
+    break;
+    case 3:
+    if(distance>10){
+        printf("Transport Fee ₹ 1800");
+    }
+   }
+}
