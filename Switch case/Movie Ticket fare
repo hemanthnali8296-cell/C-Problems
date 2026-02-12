@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() {
+    int type,fare=0,time;
+    scanf("%d %d",&type,&time);
+    switch(type){
+        case 1:
+        fare=150;
+        if(time>=18){
+            fare=fare+50;
+            printf("%d",fare);
+        }else{
+            fare=150;
+            printf("%d",fare);
+        }break;
+        case 2:
+        fare=250;
+        if(time>=18){
+            fare=fare+50;
+            printf("%d",fare);
+        }else{
+            printf("%d",fare);
+        }break;
+    }
+}
