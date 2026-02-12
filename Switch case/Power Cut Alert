@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int  type,time;
+    scanf("%d %d",&type,&time);
+    switch(type){
+        case 1:
+        if(time>0&&time<=1){
+            printf("Short Interruption");
+            break;
+        }
+        case 2:
+        if(time<=4){
+            printf("Medium Interruption");
+            break;
+        }else{
+            printf("Long Interruption");
+        }
+        break;
+    }
+}
