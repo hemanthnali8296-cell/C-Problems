@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int  type,year;
+    scanf("%d %d",&type,&year);
+    switch(type){
+        case 1:
+        if(year>0&&year<=1){
+            printf("Under Warranty");
+            break;
+        }
+        case 2:
+        if(year<=2){
+            printf("Limited warranty");
+            break;
+        }case 3:
+        if(year>2){
+            printf("Out of Warranty");
+        }
+    }
+}
