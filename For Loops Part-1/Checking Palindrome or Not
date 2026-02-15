@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+    int n,org,rev=0,rem;
+    scanf("%d",&n);
+    org=n;
+    for(;n!=0;){
+        rem=n%10;
+        rev=rev*10+rem;
+        n/=10;
+    }if(org==rev){
+        printf("Palindrome");
+    }else{
+        printf("Not a Palindrome");
+    }
+    return 0;
+}
