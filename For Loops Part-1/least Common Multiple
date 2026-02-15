@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    int a,b,temp;
+    int gcd,lcm;
+    scanf("%d %d",&a,&b);
+    int x=a,y=b;
+    for(;y!=0;){
+        temp=y;
+        y=x%y;
+        x=temp;
+         gcd=x;
+       lcm=(a*b)/gcd;
+    }printf("%d ",lcm);
+    return 0;
+}
