@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+    int binary;
+    int decimal=0,rem,base=1;
+    scanf("%d",&binary);
+    for(int i=0;binary!=0;i++){
+        rem=binary%10;
+        decimal+=rem*base;
+        base=base*2;
+        binary/=10;
+    }printf("%d",decimal);
+    return 0;
+}
