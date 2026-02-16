@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+int subjects,marks,sum=0,count=0;
+scanf("%d",&subjects);
+for(int i=0;i<subjects;i++){
+scanf("%d",&marks);
+sum+=marks;
+if(marks<40){
+     count++;
+}
+}printf("Average score: %d\n",sum/subjects);
+ printf("Failed Subjects:%d",count);
+return 0;
+}
+
+
