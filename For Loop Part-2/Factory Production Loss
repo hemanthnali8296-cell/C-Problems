@@ -5,7 +5,7 @@ scanf("%d",&n);
 for(int i=0;i<n;i++){
 scanf("%d",&units);
 sum+=units;
-if(units<100){
+if(units>100){
     lossdays++;
 }
 }printf("Total Loss: %d\n",sum);
