@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+int total,used,bettery;
+int rem,sum=0;
+scanf("%d %d",&total,&used);
+for(int i=0;i<used;i++){
+    scanf("%d",&bettery);
+    sum+=bettery;
+    rem=total-sum;
+}
+printf("Remainig Battery: %d",rem);
+return 0;
+}
+
+
+0
