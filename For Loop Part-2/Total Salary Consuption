@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main(){
+    int salary,absents;
+    scanf("%d %d",&salary,&absents);
+        int total;
+        total=salary-(absents*100);
+        printf("Final Salary:₹ %d",total);
+        return 0;
+}
+
