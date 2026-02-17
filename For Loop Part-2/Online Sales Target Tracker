@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+int days,revenue,total=0,count=0;
+scanf("%d",&days);
+for(int i=0;i<days;i++){
+     scanf("%d",&revenue);
+     total+=revenue;
+     if(revenue>50000){
+          count++;
+     }
+}printf("Total Revenue:%d\n",total);
+printf("Target Days:%d",count);
+return 0;
+}
