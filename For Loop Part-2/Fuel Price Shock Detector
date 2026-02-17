@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+int days,fuel_price,sum=0,count=0;
+int max;
+scanf("%d",&days);
+for(int i=0;i<days;i++){
+scanf("%d",&fuel_price);
+    if(fuel_price>max){
+     max=fuel_price;
+    }
+if(fuel_price>100){
+     count++;
+}
+}printf("Highest Price: %d\n",max);
+ printf("High Price Days:%d",count);
+return 0;
+}
