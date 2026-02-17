@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+int hours,errors,total=0,count=0;
+scanf("%d",&hours);
+for(int i=0;i<hours;i++){
+     scanf("%d",&errors);
+     total+=errors;
+     if(errors>50){
+          count++;
+     }
+}printf("Total Errors:%d\n",total);
+printf("Critical Hours:%d",count);
+return 0;
+}
