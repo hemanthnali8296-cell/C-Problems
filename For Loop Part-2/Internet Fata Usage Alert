@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+int days,data_usage,sum=0,count=0;
+scanf("%d",&days);
+for(int i=0;i<days;i++){
+scanf("%d",&data_usage);
+sum+=data_usage;
+if(data_usage>2){
+     count++;
+}
+}printf("Total Data : %d\n",sum);
+ printf("High Usage Days:%d",count);
+return 0;
+}
