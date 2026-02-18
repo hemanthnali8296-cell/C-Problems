@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(){
+int ot,hours,sum=0,cost,heavyday;
+scanf("%d",&ot);
+for(int i=0;i<ot;i++){
+     scanf(" %d",&hours);
+       sum+=hours;
+       cost=sum*200;
+     
+     if(hours>3){
+          heavyday++;
+     }
+}
+printf("Total Overtime:%d\n",sum);
+printf("Overtime Days:%d\n",cost);
+printf("Heavy Overtime Days:%d",heavyday);
+return 0;
+}
