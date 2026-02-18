@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(){
+     int n,period,count=0;
+     int max;
+     scanf("%d",&n);
+     for(int i=0;i<n;i++){
+          scanf("%d",&period);
+          if(period>max){
+               max=period;
+          }
+          if(period>70){
+               count++;
+          }
+     }
+     printf("Maximum Noise:%d\n",max);
+     printf("Noisy periods:%d",count);
+return 0;
+}
