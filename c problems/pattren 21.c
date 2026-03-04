@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    int i,j;
+    for(i=1;i<=2*n-1;i++){
+        for(j=1;j<=2*n-1;j++){
+            int min1=i<j?i:j;
+            int min2=min1<(2*n-i)?min1:(2*n-i);
+            int min=min2<(2*n-j)?min2:(2*n-j);
+            printf("%d ",n-min+1);
+        }
+        printf("\n");
+    }
+    return 0;
+}
