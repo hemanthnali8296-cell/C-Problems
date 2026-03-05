@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+int n,i=0;
+int balence,transaction;
+scanf("%d %d",&n,&balence);
+int count=0;
+while(i < n) {
+scanf("%d",&transaction);
+  balence+=transaction;
+if(balence<2000){
+    count++;
+}
+i++;
+}
+printf("Final Balence: %d\n",balence);
+printf("Low Balence Days: %d",count);
+    return 0;
+}
