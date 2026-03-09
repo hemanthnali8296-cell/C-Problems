@@ -1,13 +1,16 @@
-#include <stdio.h>
-int main() {
-    //Your Code goes here!
-    char  x;
-    printf("x:");
-    scanf("%c",&x);
-    if(x=='a' || x=='e' || x=='i' || x=='o' || x=='u'){
-        printf("vowels");
-    }else{
-        printf("consonants");  
-    }
-    return 0;
+#include<stdio.h>
+int main(){
+     int data,n,usage,rem;
+     int sum=0,count=0;
+     scanf("%d %d",&data,&n);
+     for(int i=0;i<n;i++){
+          scanf("%d",&usage);
+          sum+=usage;
+          rem=data-sum;
+          if(data>=sum){
+               count++;
+          }
+     }
+     printf("Remaining Data: %d\n",rem);
+     printf("Successful: %d",count);
 }
