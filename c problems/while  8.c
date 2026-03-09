@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+    int n,status;
+    int i=0;
+    int str=0,longstr=0;
+    scanf("%d",&n);
+    while(i<n){
+        scanf("%d",&status);
+        if(status==0){
+            str++;
+        
+        if(str>longstr){
+            longstr=str;
+        }
+        }else{
+            str=0;
+        }
+        i++;
+    }
+    printf("Long Default Streak: %d",longstr);
+    return 0;
+}
