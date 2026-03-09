@@ -1,13 +1,15 @@
 #include <stdio.h>
 int main() {
     //Your Code goes here!
-    int a,b;
-    scanf("%d",&a);
-    scanf("%d",&b);
-    if (a>b){
-        printf("The greater Number:%d\n",a);
-    }else if (b>a){
-        printf("The greater Number:%b",b);
+    int salary;
+    printf("Salary:");
+    scanf("%d",&salary);
+    if(salary>=20000){
+        salary=salary+2000;
+        printf("final salary:%d",salary);
+    }else{
+        salary=salary+1000;
+        printf("final salary:%d",salary);
     }
     return 0;
 }
