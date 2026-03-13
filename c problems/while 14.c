@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(){
+    int cash,n,withdraw,rem;
+    int i=0,sum=0,count=0;
+    scanf("%d %d",&cash,&n);
+    while(i<n){
+        scanf("%d",&withdraw);
+        sum+=withdraw;
+        if(sum<cash){
+            count++;
+            rem=cash-sum;
+        }
+        i++;
+    }
+    printf("Successful Withdrawals: %d\n",count);
+    printf("Remaining Cash: %d",rem);
+    return 0;
+}
