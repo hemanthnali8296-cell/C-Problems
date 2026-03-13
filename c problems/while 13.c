@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main(){
+    int data,n;
+    scanf("%d %d",&data,&n);
+    int i=0,usage,exhastedday=-1;
+    int overused=0;
+    while(i<n){
+        scanf("%d ",&usage);
+        data=data-usage;
+        if(data<=0&&exhastedday==-1){
+            exhastedday=i+1;
+            if(data<0){
+                overused=-data;
+            }
+            break;
+        }
+        i++;
+    }
+    if(exhastedday==-1){
+        printf("Exhasted Day: Not Exhasted\n");
+        printf("Overused Data: 0");
+    }else{
+        printf("Exhasted Day: %d\n",exhastedday);
+        printf("Overused Data: %d",overused);
+    }
+    return 0;
+}
