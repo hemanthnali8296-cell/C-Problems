@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+     int n,i,num,sum=0;
+     scanf("%d",&n);
+     for(i=0;i<n-1;i++){
+        scanf("%d",&num);
+        sum+=num;
+     }
+     int expected=n*(n+1)/2;
+     int missing=expected-sum;
+     printf("%d",missing);
+    return 0;
+}
