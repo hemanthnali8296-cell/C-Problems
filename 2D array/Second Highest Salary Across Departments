@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <limits.h>
+int main() {
+    int R, C;
+    scanf("%d %d", &R, &C);
+    int salary[R][C];
+    for (int i = 0; i < R; i++) {
+        for (int j = 0; j < C; j++) {
+            scanf("%d", &salary[i][j]);
+        }
+    }
+    int max = INT_MIN;
+    int secondMax = INT_MIN;
+    for (int i = 0; i < R; i++) {
+        for (int j = 0; j < C; j++) {
+            int val = salary[i][j];
+            if (val > max) {
+                secondMax = max;
+                max = val;
+            } 
+            else if (val < max && val > secondMax) {
+                secondMax = val;
+            }
+        }
+    }
+    printf("%d\n", secondMax);
+    return 0;
+}
