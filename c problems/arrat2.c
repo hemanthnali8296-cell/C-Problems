@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <limits.h>
+int main() {
+    int R, C;
+    scanf("%d %d", &R, &C);
+    int arr[R][C];
+    for(int i = 0; i < R; i++) {
+        for(int j = 0; j < C; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    int maxVal[R], minVal[R];
+        for(int i = 0; i < R; i++) {
+        maxVal[i] = INT_MIN;
+        minVal[i] = INT_MAX;
+        for(int j = 0; j < C; j++) {
+            if(arr[i][j] > maxVal[i])
+                maxVal[i] = arr[i][j];
+            if(arr[i][j] < minVal[i])
+                minVal[i] = arr[i][j];
+        }
+    }
+    int maxProduct = INT_MIN;
+    for(int i = 0; i < R; i++) {
+        for(int j = i + 1; j < R; j++) {
+            int product1 = maxVal[i] * maxVal[j];
+            int product2 = minVal[i] * minVal[j];
+            if(product1 > maxProduct)
+                maxProduct = product1;
+
+            if(product2 > maxProduct)
+                maxProduct = product2;
+        }
+    }
+
+    printf("%d\n", maxProduct);
+    return 0;
+}
