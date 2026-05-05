@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main() {
+    int R, C;
+    scanf("%d %d", &R, &C);
+    int arr[R][C];
+    for(int i = 0; i < R; i++) {
+        for(int j = 0; j < C; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    for(int i = 0; i < R; i++) {
+        for(int j = 0; j < C; j++) {
+            int current = arr[i][j];
+            for(int x = i; x < R; x++) {
+                int y_start = (x == i) ? j + 1 : 0;
+
+                for(int y = y_start; y < C; y++) {
+                    if(current == arr[x][y]) {
+                        printf("%d\n", current);
+                        return 0;
+                    }
+                }
+            }
+        }
+    }
+    printf("No repeating element\n");
+    return 0;
+}
