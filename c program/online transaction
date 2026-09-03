@@ -1,0 +1,90 @@
+#include <stdio.h>
+
+// Function declarations for modular design
+void checkBalance(double balance);
+double depositMoney(double balance);
+double withdrawMoney(double balance);
+
+int main() {
+    // Initialise default account data
+    double accountBalance = 5000.00; 
+    int choice;
+    int isRunning = 1;
+
+    printf("=== WELCOME TO THE SECURE ONLINE TRANSACTION SYSTEM ===\n");
+
+    // Continuous loop to process operations until the user exits
+    while (isRunning) {
+        printf("\n--- MAIN MENU ---\n");
+        printf("1. Check Balance\n");
+        printf("2. Deposit Funds\n");
+        printf("3. Withdraw Funds\n");
+        printf("4. Exit Session\n");
+        printf("Please enter your choice (1-4): ");
+        
+        // Read user input safely
+        if (scanf("%d", &choice) != 1) {
+            printf("\nError: Invalid input format. Exiting transaction.\n");
+            break;
+        }
+
+        switch (choice) {
+            case 1:
+                checkBalance(accountBalance);
+                break;
+            case 2:
+                accountBalance = depositMoney(accountBalance);
+                break;
+            case 3:
+                accountBalance = withdrawMoney(accountBalance);
+                break;
+            case 4:
+                printf("\nSession closed. Thank you for banking with us online!\n");
+                isRunning = 0;
+                break;
+            default:
+                printf("\nInvalid selection! Please select a valid option from the menu.\n");
+        }
+    }
+
+    return 0;
+}
+
+// Function to view current financial status
+void checkBalance(double balance) {
+    printf("\n>>> CURRENT BALANCE: ₹%.2f\n", balance);
+}
+
+// Function to add funds securely with input validation
+double depositMoney(double balance) {
+    double depositAmount;
+    printf("\nEnter the amount to deposit: ₹");
+    scanf("%double", &depositAmount);
+
+    if (depositAmount <= 0) {
+        printf("Transaction Failed: Deposit amount must be greater than zero.\n");
+    } else {
+        balance += depositAmount;
+        printf("Transaction Successful! ₹%.2f deposited into your account.\n", depositAmount);
+        printf("New Balance: ₹%.2f\n", balance);
+    }
+    return balance;
+}
+
+// Function to process cash withdrawal with balance check
+double withdrawMoney(double balance) {
+    double withdrawalAmount;
+    printf("\nEnter the amount to withdraw: ₹");
+    scanf("%double", &withdrawalAmount);
+
+    if (withdrawalAmount <= 0) {
+        printf("Transaction Failed: Invalid withdrawal amount.\n");
+    } else if (withdrawalAmount > balance) {
+        printf("Transaction Failed: Insufficient funds available.\n");
+    } else {
+        balance -= withdrawalAmount;
+        printf("Transaction Successful! ₹%.2f deducted from your account.\n", withdrawalAmount);
+        printf("New Balance: ₹%.2f\n", balance);
+    }
+    return balance;
+}
