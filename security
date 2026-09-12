@@ -1,0 +1,72 @@
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class SecurityManager {
+
+    private static final Map<String, String> USER_DATABASE = new HashMap<>();
+    private static final Map<String, String> USER_ROLES = new HashMap<>();
+
+    static {
+        USER_DATABASE.put("admin", hashPassword("AdminSecret123!"));
+        USER_ROLES.put("admin", "ADMIN");
+
+        USER_DATABASE.put("john_doe", hashPassword("UserPasswordPass!"));
+        USER_ROLES.put("john_doe", "USER");
+    }
+
+    public static boolean authenticate(String username, String password) {
+        if (username == null || password == null) {
+            return false;
+        }
+
+        String storedHash = USER_DATABASE.get(username);
+        if (storedHash == null) {
+            return false;
+        }
+
+        String inputHash = hashPassword(password);
+        return MessageDigest.isEqual(storedHash.getBytes(StandardCharsets.UTF_8), inputHash.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public static boolean hasRole(String username, String requiredRole) {
+        String role = USER_ROLES.get(username);
+        return role != null && role.equalsIgnoreCase(requiredRole);
+    }
+
+    private static String hashPassword(String password) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("SHA-256 algorithm not available", e);
+        }
+    }
+
+    public static void main(String[] args) {
+        String user = "admin";
+        String pass = "AdminSecret123!";
+
+        if (authenticate(user, pass)) {
+            System.out.println("Authentication successful for: " + user);
+            if (hasRole(user, "ADMIN")) {
+                System.out.println("Access Granted to Admin Dashboard.");
+            } else {
+                System.out.println("Access Denied: Insufficient permissions.");
+            }
+        } else {
+            System.out.println("Authentication failed.");
+        }
+    }
+}
