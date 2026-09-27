@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    if (system(NULL) == 0) {
+        return 1;
+    }
+    
+    system("date");
+
+    #if defined(_WIN32) || defined(_WIN64)
+        system("dir");
+    #else
+        system("ls -l");
+    #endif
+
+    return 0;
+}
